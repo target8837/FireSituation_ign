@@ -1,0 +1,280 @@
+<sdf version='1.6'>
+  <world name='dorm'>
+    <plugin
+      filename="ignition-gazebo-physics-system"
+      name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-scene-broadcaster-system"
+      name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>6 8</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>6 8</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0 0.8 0 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+
+    <model name="pillar1">
+      <pose>-2.5 -0.5 1 0 0 0</pose>
+      <static>true</static>
+      <link name="cylinder_link">
+        <collision name="cylinder_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="cylinder_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0.8 0.5 0.2 1</diffuse>
+            <specular>0 1 0 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="pillar2">
+      <pose>-0.5 -0.5 1 0 0 0</pose>
+      <static>true</static>
+      <link name="cylinder_link">
+        <collision name="cylinder_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="cylinder_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0.8 0.5 0.2 1</diffuse>
+            <specular>0 1 0 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="pillar3">
+      <pose>0.5 1.5 1 0 0 0</pose>
+      <static>true</static>
+      <link name="cylinder_link">
+        <collision name="cylinder_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="cylinder_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0.8 0.5 0.2 1</diffuse>
+            <specular>0 1 0 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="pillar4">
+      <pose>0.5 -1.5 1 0 0 0</pose>
+      <static>true</static>
+      <link name="cylinder_link">
+        <collision name="cylinder_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="cylinder_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>cage/Diffuse</name>
+              <uri>model:///usr/share/ignition/ignition-gazebo5/worlds/materials/scripts/cage.material</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="pillar5">
+      <pose>2.5 -0.5 1 0 0 0</pose>
+      <static>true</static>
+      <link name="cylinder_link">
+        <collision name="cylinder_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="cylinder_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0.8 0.5 0.2 1</diffuse>
+            <specular>0 1 0 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="dome">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="dome_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/kwan/Downloads/cage.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+
+        <visual name="dome_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/kwan/Downloads/cage.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>0.1 0.1 0.1 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="grass">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="grass_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/kwan/Downloads/pulbat.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+
+        <visual name="grass_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/kwan/Downloads/pulbat.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 0.9 0.3 1</diffuse>
+            <specular>0 1 0 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="smoke_generator">
+        <pose>-1.5 2.5 0.5 0 -1.57 0</pose>
+        <static>true</static>
+        <link name="link"/>
+        <plugin filename="ignition-gazebo-particle-emitter-system" name="ignition::gazebo::systems::ParticleEmitter">
+            <emitter_name>smoke_generator</emitter_name>
+            <emitting>true</emitting>
+            <lifetime>0.6</lifetime>
+            <min_velocity>1</min_velocity>
+            <max_velocity>4</max_velocity>
+            <scale_rate>10</scale_rate>
+            <material>
+                <diffuse>1 0.7 0.7</diffuse>
+                <pbr>
+                    <metal>
+                        <albedo_map>materials/textures/smoke.png</albedo_map>
+                    </metal>
+                </pbr>
+            </material>
+            <color_range_image>materials/textures/smokecolors.png</color_range_image>
+        </plugin>
+    </model>
+  </world>
+</sdf>
